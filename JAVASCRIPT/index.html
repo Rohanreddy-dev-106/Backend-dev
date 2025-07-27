@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: black;
+
+        }
+        .divbox{
+            width: 50vw;
+            height: 50vh;
+            border: 2px solid red;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              animation: spin 5s ease-in-out 1s 6 5s;
+
+        }
+        .divbox  div{
+            background-color: blue;
+            width: 20%;
+       
+            border: 2px solid whitesmoke;
+        
+        }
+         .divbox div:hover {
+  animation: flipPop 1s ease-in-out forwards;
+}
+
+@keyframes flipPop {
+  0% {
+    transform: scale(1) rotate(0deg) translateX(0);
+    opacity: 1;
+  }
+
+  25% {
+    transform: scale(1.2) rotate(15deg) translateX(10px);
+    opacity: 0.8;
+  }
+
+  50% {
+    transform: scale(0.9) rotate(-10deg) translateX(-10px);
+    opacity: 0.6;
+  }
+
+  75% {
+    transform: scale(1.05) rotate(5deg) translateX(5px);
+    opacity: 0.9;
+  }
+
+  100% {
+    transform: scale(1) rotate(0deg) translateX(0);
+    opacity: 1;
+  }
+}
+
+    </style>
+</head>
+<body>
+    <div class="divbox">
+        
+            <div>1</div>
+        
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+    </div>
+    <!-- <script src="daty-1.js"></script> -->
+     <script src="day-3.js"></script>
+</body>
+</html>
