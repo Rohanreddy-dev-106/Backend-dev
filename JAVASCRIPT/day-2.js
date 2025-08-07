@@ -17,7 +17,7 @@ let m=i++;
 console.log(m);
 
 //(==,===)
-console.log(6!=*"6","jj");//it is a bug
+console.log(6!="6","jj");//it is a bug
 console.log(6!=="6");//it check datatype and data
 
 /** Operator precedence */

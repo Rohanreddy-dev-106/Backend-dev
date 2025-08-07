@@ -5,7 +5,7 @@
 //IIFE function(Immediately Invoked Function Expression)
 //pure and impure functions
 //callBack functions
-//Higher order functions(MAP(),FILTER() ,REDUCE(),find() ,findIndex())
+//Higher order functions(MAP(),FILTER() ,REDUCE(),find() ,findIndex(),Foreach())
 //Currying in js
 //this keyword
 
