@@ -121,5 +121,8 @@ let obj1={
 }
 const{Name:username,age,address:{street,roodnumber},hob:[a,b,c]}=obj1
 console.log(username,age,street,roodnumber,a,b,c);
+const{Name,...others}=obj1;
+console.log(others);
+
 
 
