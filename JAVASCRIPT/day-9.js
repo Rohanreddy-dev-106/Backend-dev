@@ -71,10 +71,14 @@ let movie2 = info("F1", 2025, "BP", "MEA")
 function Movies(title, year) {
   this.title = title;
   this.year = year;
-  this.getdetails = function () {
-    console.log(this.title, this.year);
+  // this.getdetails = function () {
+  //   console.log(this.title, this.year);
 
-  }
+  // }
+}
+Movies.prototype.getdetails=function () {
+  console.log(this.title,this.year);
+  
 }
 let m1 = new Movies("cooli", 2025)
 let m2 = new Movies("cooli2", 2027)
