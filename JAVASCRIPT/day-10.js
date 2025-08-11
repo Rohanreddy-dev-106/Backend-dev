@@ -5,6 +5,9 @@
 
 //Inhertance
 
+//Static keyword
+
+//getter and Setters
 
 //Encapsulation
 class VachileClass {
@@ -12,6 +15,7 @@ class VachileClass {
      #name;//# private propertyes
      #color;
      #year;
+     static varname="rohan reddy"
     constructor(name,color,year) {
         this.#name=name;
         this.#color=color;
@@ -22,12 +26,20 @@ class VachileClass {
     getdata(){
         console.log(this.#name,this.#color,this.#year);
     }
+    static method1(){
+        console.log("this is a static method");
+        
+    }
      //private methods
     #getNumber(){
         return 106;
     }
 }
 const vec1=new VachileClass("BMW","BLUE",2025);
+console.log(VachileClass.varname);
+console.log(VachileClass.method1());
+// console.log(vec1.#getNumber())//not accesible outside of class
+
 // vec1.getdata()
 // console.log(vec1);
 
@@ -46,6 +58,27 @@ class Car extends VachileClass{
     }
 }
 const car1=new Car("BMW2","RED","BMWE6",2026);
-car1.getdata()
-console.log(car1);
+// car1.getdata()
+// console.log(car1);
 
+//getter and Setters
+
+class Example {
+    #_data//private property
+  constructor(data) {
+    this.#_data = data;
+  }
+
+  get data() {
+    return this.#_data;
+  }
+
+  set Newdate(newValue) {
+    console.log(`Incoming value: ${newValue}`);
+    this.#_data = newValue;
+  }
+}
+
+const obj = new Example("Hello");
+obj.Newdate= "World"; // Incoming value: World
+console.log(obj.data); // World
