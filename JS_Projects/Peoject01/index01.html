@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Sorting Visualizer - Retro Terminal</title>
+<link rel="stylesheet" href="style01.css">
+</head>
+<body>
+  <div class="bezel">
+    <div class="screen">
+      <div class="content">
+        <header>
+          <h1>Sorting Visualizer</h1>
+          <select>
+            <option>Bubble Sort</option>
+            <option>Selection Sort</option>
+            <option>Insertion Sort</option>
+            <option>Merge Sort</option>
+            <option>Quick Sort</option>
+          </select>
+          <input type="number" min="5" max="26" value="10">
+          <button>Generate</button>
+          <button>Sort</button>
+        </header>
+        <div class="main">
+          <section class="visual">
+            <div class="title">ARRAY</div>
+            <div class="bar-wrap">
+              <div class="cell" style="height:160px"><span class="value">42</span></div>
+              <div class="cell" style="height:100px"><span class="value">17</span></div>
+              <div class="cell" style="height:200px"><span class="value">89</span></div>
+              <div class="cell" style="height:120px"><span class="value">23</span></div>
+              <div class="cell" style="height:140px"><span class="value">56</span></div>
+              <div class="cell" style="height:90px"><span class="value">14</span></div>
+              <div class="cell" style="height:170px"><span class="value">73</span></div>
+              <div class="cell" style="height:110px"><span class="value">35</span></div>
+              <div class="cell" style="height:150px"><span class="value">60</span></div>
+              <div class="cell" style="height:60px"><span class="value">8</span></div>
+            </div>
+          </section>
+          <aside class="code">
+            <div class="term-bar">
+              <div class="term-buttons">
+                <div class="btn red"></div>
+                <div class="btn yellow"></div>
+                <div class="btn green"></div>
+              </div>
+              <div class="term-title">user@retro:~/sorting</div>
+            </div>
+            <div class="term-body">
+              <div class="prompt">C:\&gt; dir</div>
+              <div class="prompt" style="color:var(--code-text);font-size:0.8rem">
+                dir *.java<br>
+                bubble.java  selection.java  insertion.java  merge.java  quick.java
+              </div>
+              <div class="prompt">C:\&gt; cls</div>
+              <div class="prompt">C:\&gt; display bubble.java</div>
+              <div class="title" style="color:var(--phosphor);font-weight:700">Java — Bubble Sort</div>
+              <div class="code-block">
+<pre>public void bubbleSort(int[] arr) {
+    int n = arr.length;
+    for (int i = 0; i &lt; n - 1; i++) {
+        for (int j = 0; j &lt; n - i - 1; j++) {
+            if (arr[j] &gt; arr[j + 1]) {
+                int temp = arr[j];
+                arr[j] = arr[j + 1];
+                arr[j + 1] = temp;
+            }
+        }
+    }
+}</pre>
+              </div>
+              <div class="prompt">C:\&gt; run bubble.java</div>
+            </div>
+            <div class="term-footer">
+              <div>Line 1-12</div>
+              <div>Encoding: UTF-8</div>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="script01.js"></script>
+</body>
+</html>

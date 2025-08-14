@@ -57,8 +57,3 @@ function outprint() {
 const inner=outprint();
 const ans=inner()
 console.log(ans);
-
-
-
-
-
