@@ -35,7 +35,6 @@ html::-webkit-scrollbar-thumb, body::-webkit-scrollbar-thumb {
 
 .bezel {
   width: min(1200px, 96%);
-  height: auto;
   margin: 1.5rem auto;
   padding: 1.5rem;
   background: linear-gradient(180deg, #0a0f0a 0%, #000 20%, #050805 100%);
@@ -72,21 +71,21 @@ html::-webkit-scrollbar-thumb, body::-webkit-scrollbar-thumb {
   content: "";
   position: absolute;
   inset: 0;
-  pointer-events: none;
   background:
     repeating-linear-gradient(to right, rgba(0, 100, 0, 0.12) 0, rgba(0, 100, 0, 0.12) 1px, transparent 1px, transparent 5px),
     repeating-linear-gradient(to bottom, rgba(255, 255, 255, 0.04) 0, rgba(255, 255, 255, 0.04) 1px, transparent 1px, transparent 5px);
   mix-blend-mode: screen;
   z-index: 6;
+  pointer-events: none;
 }
 
 .screen::after {
   content: "";
   position: absolute;
   inset: 0;
-  pointer-events: none;
   background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0) 50%, var(--screen-vignette) 100%);
   z-index: 10;
+  pointer-events: none;
 }
 
 @keyframes crtFlicker {
@@ -101,7 +100,6 @@ html::-webkit-scrollbar-thumb, body::-webkit-scrollbar-thumb {
   flex-direction: column;
   gap: 1.5rem;
   padding: 1.5rem;
-  box-sizing: border-box;
 }
 
 header {
@@ -111,7 +109,6 @@ header {
   justify-content: center;
   gap: 0.8rem;
 }
-
 header h1 {
   margin: 0;
   font-size: clamp(1.2rem, 2.5vw, 1.5rem);
@@ -128,16 +125,13 @@ select, button, input[type=number] {
   color: var(--phosphor);
   font-family: inherit;
   font-size: 1rem;
-  outline: none;
   border-radius: 4px;
   transition: background 0.3s ease;
 }
-
 select:hover, button:hover, input:hover {
   background: rgba(0, 80, 0, 0.3);
   cursor: pointer;
 }
-
 button {
   text-transform: uppercase;
   letter-spacing: 1px;
@@ -148,8 +142,6 @@ button {
   display: flex;
   flex-wrap: wrap;
   gap: 1.5rem;
-  align-items: flex-start;
-  justify-content: stretch;
 }
 
 .visual {
@@ -162,16 +154,13 @@ button {
   background: linear-gradient(180deg, rgba(0, 20, 0, 0.15), rgba(0, 10, 0, 0.15));
   border-radius: 8px;
   border: 1px solid rgba(0, 100, 0, 0.05);
-  position: relative;
 }
-
 .visual .title {
   color: var(--phosphor-dim);
   font-weight: 700;
   letter-spacing: 1.2px;
   font-size: 1rem;
   align-self: flex-start;
-  margin-left: 0.8rem;
 }
 
 .bar-wrap {
@@ -194,7 +183,6 @@ button {
   font-size: 0.85rem;
   border: 2px solid rgba(0, 100, 0, 0.5);
   box-shadow: 0 8px 15px rgba(0, 0, 0, 0.8);
-  box-sizing: border-box;
 }
 
 .value {
@@ -205,8 +193,6 @@ button {
 
 .code {
   flex: 1 1 300px;
-  min-width: 280px;
-  max-width: 600px;
   background: var(--terminal-bg);
   display: flex;
   flex-direction: column;
@@ -224,12 +210,10 @@ button {
   background: linear-gradient(180deg, rgba(0, 40, 0, 0.4), rgba(0, 20, 0, 0.5));
   border-bottom: 1px solid rgba(0, 100, 0, 0.1);
 }
-
 .term-buttons {
   display: flex;
   gap: 10px;
 }
-
 .btn {
   width: 14px;
   height: 14px;
@@ -252,7 +236,6 @@ button {
   gap: 0.8rem;
   flex: 1;
 }
-
 .prompt {
   color: var(--phosphor);
   font-weight: 700;
@@ -288,17 +271,13 @@ button {
   line-height: 1.5;
   white-space: pre;
 }
-
 .code pre::after {
   content: "▌";
   margin-left: 8px;
   color: var(--phosphor);
   animation: blink-caret 1s steps(2, end) infinite;
 }
-
-@keyframes blink-caret {
-  50% { opacity: 0; }
-}
+@keyframes blink-caret { 50% { opacity: 0; } }
 
 .term-footer {
   border-top: 1px solid rgba(0, 100, 0, 0.06);

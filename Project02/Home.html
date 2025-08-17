@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sorting Visualizer - Retro Terminal</title>
+<style>
+  body {
+    background: #000;
+    color: #00ff66;
+    font-family: "Courier New", monospace;
+    margin: 0;
+    padding: 10px;
+    height: 100vh;
+    overflow-y: auto;
+  }
+
+  /* CRT scanlines */
+  body::after {
+    content: "";
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: repeating-linear-gradient(
+      to bottom,
+      rgba(0,255,102,0.05) 0px,
+      rgba(0,255,102,0.05) 1px,
+      transparent 2px
+    );
+    pointer-events: none;
+  }
+
+  /* Banner animation */
+  #banner {
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 2px solid #00ff66;
+    display: inline-block;
+    animation: typing 4s steps(32, end) infinite, blink 0.7s step-end infinite;
+    margin-bottom: 10px;
+  }
+
+  @keyframes typing {
+    0% { width: 0; }
+    40% { width: 32ch; }   /* fully typed */
+    60% { width: 32ch; }   /* pause */
+    100% { width: 0; }     /* erase */
+  }
+
+  @keyframes blink {
+    50% { border-color: transparent; }
+  }
+
+  pre {
+    margin: 0;
+    white-space: pre-wrap;
+  }
+
+  .prompt {
+    color: #00ff66;
+  }
+
+  #cmd-input {
+    background: none;
+    border: none;
+    outline: none;
+    color: #00ff66;
+    font-family: inherit;
+    font-size: 14px;
+    width: 60%;
+  }
+</style>
+</head>
+<body>
+
+<div id="banner">Developed By Sai_Rohan_Reddy_106...</div>
+
+<pre id="terminal-output"></pre>
+
+<div>
+  <span class="prompt">C:\></span>
+  <input type="text" id="cmd-input" autofocus autocomplete="off">
+</div>
+
+<script>
+const output = document.getElementById("terminal-output");
+const input = document.getElementById("cmd-input");
+
+function printToTerminal(text) {
+  output.innerHTML += "\n" + text;
+
+}
+
+function simulateStartup() {
+const asciiLogo = `
+  _______________________________________________________________
+ /                                                               \\
+|  .-----------------------------------------------------------.  |
+|  |  >> RETRO SORTING VISUALIZER — MINI (v0.9)                |  |
+|  |-----------------------------------------------------------|  |
+|  |  Emblem:   [ ▄▂▃▄ ▄▄▆█ ▄▄▂ ▄▇▆ ▄ ]                   |  |
+|  |                                                           |  |
+|  |  Visual:   bubble  -> selection  -> insertion  -> merge   |  |
+|  |             [•]    [•]         [ ]         [ ]     [ ]    |  |
+|  |                                                           |  |
+|  |  Boot:     [INIT] array-core .........[OK]                |  |
+|  |            [INIT] renderer ..........[OK]                 |  |
+|  |            [INIT] io / tty ..........[OK]                 |  |
+|  |                                                           |  |
+|  |  Status:   |███████░░░░░░|  Arrays:128  Mode: CLI-RETRO   |  |
+|  |  Uptime:   00:00:12      Ver: r-0.9   Check: 3f2a9b1c     |  |
+|  |                                                           |  |
+|  |  Controls: launch | list | about | contact | help | clear |  |
+|  '-----------------------------------------------------------'  |
+ \\_______________________________________________________________/
+`;
+
+
+
+  const lines = [
+    asciiLogo,
+    "Booting Retro DOS 6.22...",
+    "Loading Sorting Visualizer CLI...",
+    "Type 'help' for commands."
+  ];
+  let i = 0;
+  const interval = setInterval(function() {
+    printToTerminal(lines[i]);
+    i++;
+    if (i === lines.length) {
+      clearInterval(interval);
+      setTimeout(function(){ runCommand("help"); }, 400);
+    }
+  }, 400);
+}
+
+function runCommand(cmd) {
+  printToTerminal(`C:\\> ${cmd}`);
+  cmd = cmd.trim().toLowerCase();
+
+  if(cmd === "launch") {
+    printToTerminal("Launching visualizer...");
+    window.location.href = "index.html";
+  } else if(cmd === "list") {
+    printToTerminal("Algorithms:\n  Bubble Sort\n  Selection Sort\n  Insertion Sort\n  Merge Sort\n  Quick Sort");
+  } else if(cmd === "about") {
+    printToTerminal("Sorting Visualizer - Retro Edition\nDOS-style CLI for sorting demos.");
+  } else if(cmd === "help") {
+    printToTerminal("Commands:\n  launch  - Start visualizer\n  list    - Show algorithms\n  about   - About project\n  clear   - Clear screen");
+  } else if(cmd === "clear") {
+    output.textContent = "";
+  } else {
+    printToTerminal(`Bad command or file name: ${cmd}`);
+  }
+}
+
+input.addEventListener("keydown", function(e) {
+  if(e.key === "Enter" && input.value.trim() !== "") {
+    runCommand(input.value);
+    input.value = "";
+  }
+});
+
+simulateStartup();
+</script>
+
+</body>
+</html>

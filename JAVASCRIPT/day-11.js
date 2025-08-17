@@ -128,6 +128,7 @@ console.log(update);
 //deep copy 
 
 let deepcopy=JSON.parse(JSON.stringify(data));
+
 deepcopy.Username="SAI";
 deepcopy.Marks.evs=106;
 console.log(deepcopy);

@@ -111,7 +111,7 @@ console.log(calculate(square_and_cube));
 //FIXME:In JavaScript, currying is a functional programming technique where a function that takes multiple arguments is transformed into a series of functions that each take one argument at a time.
 
 function power(a) {
-    return (b) => {
+    return function(b) {
         return a ** b;
     }
 }
