@@ -1,0 +1,21 @@
+{
+  "name": "first_server",
+  "version": "1.0.0",
+  "description": "my first server using notejs",
+  "main": "Day_2.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node Day_2.js"
+  },
+  "author": "Rohanreddy",
+  "license": "ISC",
+  "dependencies": {
+    "mongodb": "^6.19.0"
+  },
+  "devDependencies": {
+    "axios": "^1.11.0",
+    "give-me-a-joke": "^0.5.1",
+    "nodemon": "^3.1.10",
+    "random-facts": "^1.0.6"
+  }
+}

@@ -8,8 +8,8 @@ const fs = require('fs');//Object
 // console.log(typeof http);
 
 const server = http.createServer((req, res) => {
-
-  // res.write("This is My Application  ")//Modfying response befor end
+  res.writeHead(200, { "Content-Type": "text/html" });//it tells the brosur which data is comming
+  //res.write("This is My Application  ")//Modfying response befor end
   const data = fs.readFileSync("index.html").toString();//render HTML
   if (req.url.includes("/products")) {
     res.end("product Page...");
