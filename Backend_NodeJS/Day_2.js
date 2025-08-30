@@ -75,7 +75,7 @@ fs.appendFileSync("employe.txt", "\n{hello}\n");
 
 //Delete a file
 try {
-    fs.unlinkSync("data.txt");
+    fs.unlinkSync("database.txt");
 } catch (error) {
     console.log(error);
 
