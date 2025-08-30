@@ -4,9 +4,9 @@
 
 //NPM
 
-//readline
+//readline module
 
-//File system Module
+//File system Module(blocking and not blocking codes )
 
 // const http=require("http");
 // const server=http.createServer((req,res)=>{
@@ -40,7 +40,7 @@
 // console.log(rf.randomFact());
 // console.log(rf.factCount()); 
 
-const readline = require("readline");
+// const readline = require("readline");
 //build a interface
 
 // const interface = readline.createInterface({
@@ -57,29 +57,59 @@ const readline = require("readline");
 
 // })
 
-const fs = require("fs");
 //blocking code
+
+const fs = require("fs");
 // const buffer = fs.readFileSync("data.txt").toString();
 // console.log(buffer);
 // console.log("After print...");
 
 //Creating and writing in file
-try {
-    fs.writeFileSync("database.txt", "This is a Employe file\n {name:rohan reddy}");
-} catch (error) {
-    console.log(error);
-}
+// try {
+//     fs.writeFileSync("database.txt", "This is a Employe file\n {name:rohan reddy}");
+// } catch (error) {
+//     console.log(error);
+// }
 
-//appending data to a file if nothe exist  create it
-fs.appendFileSync("employe.txt", "\n{hello}\n");
+ //appending data to a file if nothe exist  create it
 
-//Delete a file
-try {
-    fs.unlinkSync("database.txt");
-} catch (error) {
-    console.log(error);
+// fs.appendFileSync("employe.txt", "\n{hello}\n");
 
-}
+ //Delete a file
+// try {
+//     fs.unlinkSync("database.txt");
+// } catch (error) {
+//     console.log(error);
+
+// }
+
+// unblocking codes
+
+//Reading file
+// fs.readFile("users.json",(err,data)=>{
+//     if(err)console.log(err);
+//     else console.log(data.toString());
+// });
+console.log("This is another operation");
+
+//Creating file
+fs.writeFile("data.txt","mbvjldjb",(err)=>{
+    console.log(err);
+    
+})
+
+//append file
+
+fs.appendFile("data.txt","kdklbvkbvskj",(err)=>{
+    console.log(err);
+    
+})
+
+//delet file
+
+fs.unlink("data.txt",(err)=>{console.log(err);
+})
+
 
 
 
