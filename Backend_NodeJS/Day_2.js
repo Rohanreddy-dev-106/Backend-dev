@@ -59,13 +59,13 @@ const readline = require("readline");
 
 const fs = require("fs");
 //blocking code
-const buffer = fs.readFileSync("data.txt").toString();
-console.log(buffer);
-console.log("After print...");
+// const buffer = fs.readFileSync("data.txt").toString();
+// console.log(buffer);
+// console.log("After print...");
 
 //Creating and writing in file
 try {
-    fs.writeFileSync("employe.txt", "This is a Employe file\n {name:rohan reddy}");
+    fs.writeFileSync("database.txt", "This is a Employe file\n {name:rohan reddy}");
 } catch (error) {
     console.log(error);
 }
