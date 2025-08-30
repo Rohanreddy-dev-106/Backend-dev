@@ -3,8 +3,10 @@
 
 //Creating an HTTP server
 
-const http = require('http');//Object
-const fs = require('fs');//Object
+//const http = require('http');//Object
+import  http from "http";
+//const fs = require('fs');//Object
+import  fs from "fs";
 // console.log(typeof http);
 
 const server = http.createServer((req, res) => {

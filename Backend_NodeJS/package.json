@@ -9,6 +9,7 @@
   },
   "author": "Rohanreddy",
   "license": "ISC",
+  "type": "commonjs",
   "dependencies": {
     "mongodb": "^6.19.0"
   },
