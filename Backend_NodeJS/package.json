@@ -5,13 +5,14 @@
   "main": "Day_2.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node Day_2.js"
+    "start": "node Day_3.js"
   },
   "author": "Rohanreddy",
   "license": "ISC",
   "type": "commonjs",
   "dependencies": {
-    "mongodb": "^6.19.0"
+    "mongodb": "^6.19.0",
+    "nodemailer": "^7.0.6"
   },
   "devDependencies": {
     "axios": "^1.11.0",

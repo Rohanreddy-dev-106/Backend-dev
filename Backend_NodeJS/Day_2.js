@@ -8,6 +8,8 @@
 
 //File system Module(blocking and not blocking codes )
 
+//Path Module
+
 // const http=require("http");
 // const server=http.createServer((req,res)=>{
 
@@ -93,22 +95,33 @@ const fs = require("fs");
 console.log("This is another operation");
 
 //Creating file
-fs.writeFile("data.txt","mbvjldjb",(err)=>{
-    console.log(err);
+// fs.writeFile("data.txt","mbvjldjb",(err)=>{
+//     console.log(err);
     
-})
+// })
 
 //append file
 
-fs.appendFile("data.txt","kdklbvkbvskj",(err)=>{
-    console.log(err);
+// fs.appendFile("data.txt","kdklbvkbvskj",(err)=>{
+//     console.log(err);
     
-})
+// })
 
 //delet file
 
-fs.unlink("data.txt",(err)=>{console.log(err);
-})
+// fs.unlink("data.txt",(err)=>{console.log(err);
+// })
+
+//path Module
+
+const path=require("path");
+
+const p=path.join("Backend_Nodejs","employe.txt");
+const abs=path.resolve("Backend_Nodejs","employe.txt")
+const ext=path.extname("employe.txt")
+console.log(p);
+console.log(abs);
+console.log(ext);
 
 
 
