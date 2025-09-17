@@ -5,7 +5,7 @@
 
 // Default imports and exports
 
-
+import fa
 import {obj as obj1,name} from "./mode1.js";
 // import * as modu from "./mode1.js"
 console.log(obj1.age);

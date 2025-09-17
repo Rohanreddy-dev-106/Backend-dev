@@ -23,21 +23,23 @@ class VachileClass {
     }
     //methods
    
-    getdata(){
-        console.log(this.#name,this.#color,this.#year);
-    }
-    static method1(){
-        console.log("this is a static method");
+    // getdata(){
+    //     console.log(this.#name,this.#color,this.#year);
+    // }
+    // static method1(){
+    //     console.log("this is a static method");
         
-    }
+    // }
      //private methods
-    #getNumber(){
-        return 106;
-    }
+    // #getNumber(){
+    //     return 106;
+    // }
 }
 const vec1=new VachileClass("BMW","BLUE",2025);
-console.log(VachileClass.varname);
-console.log(VachileClass.method1());
+// console.log(VachileClass.varname);
+console.log(vec1);
+
+// console.log(VachileClass.method1());
 // console.log(vec1.#getNumber())//not accesible outside of class
 
 // vec1.getdata()

@@ -47,14 +47,14 @@ server.use(GlobelMideleware);//app.use()  to excute globel middlevares
 
 const excute=[firstMiddleware,SecondMiddleware];
 
-server.get("/",excute,(req,res)=>{
-    // res.status(200);
-    res.status(200).set("Content-type","text/plane");//In Express, res.status() sets the HTTP status code and returns the same res (response) object, so you can chain more methods on it.
-    res.send("This is From Res 2")
-    return;
-})
+// server.get("/",excute,(req,res)=>{
+//     // res.status(200);
+//     res.status(200).set("Content-type","text/plane");//In Express, res.status() sets the HTTP status code and returns the same res (response) object, so you can chain more methods on it.
+//     res.send("This is From Res 2")
+//     return;
+// })
 server.use(express.static("public"));//Static HTML files
-const PORT =8080;
+const PORT =3100;
 
 server.listen(PORT,()=>console.log("Server is started...")
 )
