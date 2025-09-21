@@ -1,3 +1,5 @@
+import { name } from "ejs";
+
 export default class ModelData {
     _id;
     _name;
@@ -11,40 +13,53 @@ export default class ModelData {
         this._prise = prise;
         this._imageUrl = url;
     }
-    static getdata(){
-     return products //global scope
+    static getdata() {
+        return products //global scope
+    }
+    static AddNewdata(newproduct) {
+        let newdata = new ModelData(products.length+1, newproduct.name, newproduct.desc, newproduct.prise, newproduct.url);
+        products.push(newdata);
     }
 }
-const product1 = new ModelData(//hear each create a object with the keys provided in the constructer function
+const product1 = new ModelData(
     1,
-    "Wireless Mouse",
-    "Ergonomic wireless mouse with adjustable DPI.",
-    799,
-    "https://example.com/mouse.jpg"
+    "Attack on Titan Vol. 1",
+    "The first volume of the epic manga series by Hajime Isayama.",
+    499,
+    "https://m.media-amazon.com/images/I/71SyIss7KNL._UF1000,1000_QL80_.jpg"
 );
 
+
 const product2 = new ModelData(
-    2,
-    "Mechanical Keyboard",
-    "RGB backlit keyboard with blue switches.",
-    2499,
-    "https://example.com/keyboard.jpg"
+    3,
+    "Sword Art Online: Light Novel Vol. 1",
+    "Kirito enters the world of Sword Art Online in this thrilling light novel.",
+    599,
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTOrZ48K2KYPA7kd02DaGY6Fkag9MGIBrHyAQ&s"
 );
 
 const product3 = new ModelData(
-    3,
-    "USB-C Hub",
-    "Multi-port USB-C hub with HDMI and Ethernet.",
-    1499,
-    "https://example.com/hub.jpg"
+    4,
+    "My Hero Academia Vol. 1",
+    "Izuku Midoriya starts his journey at U.A. High School.",
+    449,
+    "https://m.media-amazon.com/images/I/81HdBTnVtHL._UF1000,1000_QL80_.jpg"
 );
 
 const product4 = new ModelData(
-    4,
-    "Noise-Cancelling Headphones",
-    "Over-ear headphones with active noise cancellation.",
-    3999,
-    "https://example.com/headphones.jpg"
+    5,
+    "Re:Zero - Starting Life in Another World Vol. 1",
+    "Subaru Natsuki finds himself in a fantasy world where death has consequences.",
+    549,
+    "https://m.media-amazon.com/images/I/91AfQdSDytL._UF1000,1000_QL80_.jpg"
 );
 
-const products = [product1, product2, product3, product4];
+const product5 = new ModelData(
+    6,
+    "One Piece Vol. 1",
+    "Follow Monkey D. Luffy and his crew on their quest for the One Piece treasure.",
+    499,
+    "https://m.media-amazon.com/images/I/91NxYvUNf6L.jpg"
+);
+
+const products = [product1, product2, product3, product4, product5];
