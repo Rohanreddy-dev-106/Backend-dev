@@ -13,13 +13,13 @@ class productController {
   getlogin(req, res) {
     res.render("login", {})
   }
-    // Middleware to  render newbook form
+  // Middleware to  render newbook form
   getNweBook(req, res) {
-    res.render("new-product-add", {})
+    res.render("new-product-add", { errors: null })
   }
-    // Middleware to  add new book
+  // Middleware to  add new book
   Addnewdata(req, res) {
-    console.log(req.body);
+    // console.log(req.body);
     Model.AddNewdata(req.body)
     let products = Model.getdata();
     res.render("products", { data: products });
