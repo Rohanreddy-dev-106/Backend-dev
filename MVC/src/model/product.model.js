@@ -14,7 +14,7 @@ export default class ModelData {
         this._imageUrl = url;
     }
     static getdata() {
-        return products //global scope
+        return products //global scope it lodes before class
     }
     static AddNewdata(newproduct) {
         let newdata = new ModelData(products.length+1, newproduct.name, newproduct.desc, newproduct.prise, newproduct.url);
