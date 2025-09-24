@@ -17,8 +17,28 @@ export default class ModelData {
         return products //global scope it lodes before class
     }
     static AddNewdata(newproduct) {
-        let newdata = new ModelData(products.length+1, newproduct.name, newproduct.desc, newproduct.prise, newproduct.url);
+        let newdata = new ModelData(products.length + 1, newproduct.name, newproduct.desc, newproduct.prise, newproduct.url);
         products.push(newdata);
+    }
+    static getproductbtID(id) {
+        let Book = products.find((product) => {
+            if (product._id === id) {
+                return true;
+            }
+        })
+        return Book;
+
+    }
+    static updatedata(updateobject) {
+        const index = products.findIndex((product) => {
+            if (product._id === Number(updateobject.id)) {
+                return true;
+            }
+        })
+        products[index]._name = updateobject.name;
+        products[index]._desc = updateobject.desc;
+        products[index]._prise = updateobject.prise;
+        products[index]._imageUrl = updateobject.url;
     }
 }
 const product1 = new ModelData(

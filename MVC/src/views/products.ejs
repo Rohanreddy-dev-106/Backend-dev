@@ -1,19 +1,21 @@
-<div class="table-responsive shadow-sm rounded">
-  <table class="table table-striped table-hover align-middle">
-    <thead class="table-dark">
+<div class="table-responsive shadow rounded-3">
+  <table class="table table-bordered table-striped table-hover align-middle mb-0">
+    <!-- neutral gray header -->
+    <thead class="table-secondary text-dark text-center">
       <tr>
-        <th scope="col">ID</th>
-        <th scope="col">Name</th>
-        <th scope="col">Description</th>
-        <th scope="col">Price</th>
-        <th scope="col">Image</th>
+        <th scope="col" class="py-3">ID</th>
+        <th scope="col" class="py-3">Name</th>
+        <th scope="col" class="py-3">Description</th>
+        <th scope="col" class="py-3">Price</th>
+        <th scope="col" class="py-3">Image</th>
+        <th scope="col" class="py-3">Actions</th>
       </tr>
     </thead>
-    <tbody>
+    <tbody class="text-center">
       <% data.forEach(product => { %>
         <tr>
-          <td class="fw-semibold"><%= product._id %></td>
-          <td><%= product._name %></td>
+          <td class="fw-semibold text-secondary"><%= product._id %></td>
+          <td class="fw-bold"><%= product._name %></td>
           <td class="text-muted"><%= product._desc %></td>
           <td class="text-success fw-bold">
             $<%= Number(product._prise).toFixed(2) %>
@@ -22,9 +24,19 @@
             <img
               src="<%= product._imageUrl %>"
               alt="Image of <%= product._name %>"
-              class="img-thumbnail"
-              style="width: 80px; height: 80px; object-fit: cover;"
+              class="img-thumbnail rounded-3 border-0 shadow-sm"
+              style="width: 90px; height: 90px; object-fit: cover;"
             />
+          </td>
+          <td>
+            <div class="d-flex justify-content-center gap-2">
+              <a href="/update/<%= product._id %>" class="btn btn-warning btn-sm">
+                Update
+              </a>
+              <a href="/delete/<%= product._id %>" class="btn btn-danger btn-sm">
+                Delete
+              </a>
+            </div>
           </td>
         </tr>
       <% }) %>
