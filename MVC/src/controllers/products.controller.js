@@ -25,15 +25,15 @@ class productController {
     res.render("products", { data: products });
 
   }
-   //Middleware to  update book
+  //Middleware to  update book
 
   UpdatePage(req, res, next) {
-  const{id }= req.params
-  console.log(typeof id);
+    const { id } = req.params
+    // console.log(typeof id);
 
     let prduct_id = Model.getproductbtID(Number(id));
-    if (prduct_id) {
-      res.render("update", { data: prduct_id ,errors: null });
+    if (Object.keys(prduct_id).length >0) {
+      res.render("update", { data: prduct_id, errors: null });
     }
     else {
 
@@ -53,11 +53,18 @@ class productController {
   }
 
   //Middleware to  update data
-  
-updatedata_D(req,res,next){
+
+  updatedata_D(req, res, next) {
     Model.updatedata(req.body)
     let products = Model.getdata();
-  res.render("products", { data: products });
-}
+    res.render("products", { data: products });
+  }
+
+  //Middleware to  Delete data
+  delete_data(req, res, next) {
+    const { id } = req.params;
+    Model.Delete(Number(id));
+    res.redirect("/");//when we delet we redirect to avoid errorsc
+  }
 }
 export { productController };

@@ -40,6 +40,14 @@ export default class ModelData {
         products[index]._prise = updateobject.prise;
         products[index]._imageUrl = updateobject.url;
     }
+    static Delete(id){
+     const index_delet=products.findIndex((p)=>{
+        if (p._id===id) {
+            return true;
+        }
+     })
+     products.splice(index_delet,1);
+    }
 }
 const product1 = new ModelData(
     1,
