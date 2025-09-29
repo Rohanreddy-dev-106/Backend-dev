@@ -1,5 +1,5 @@
-import { name } from "ejs";
-
+/* The above class `ModelData` represents a data model for products with properties like id, name,
+description, price, and image URL, along with methods for managing product data. */
 export default class ModelData {
     _id;
     _name;
@@ -16,8 +16,8 @@ export default class ModelData {
     static getdata() {
         return products //global scope it lodes before class
     }
-    static AddNewdata(newproduct) {
-        let newdata = new ModelData(products.length + 1, newproduct.name, newproduct.desc, newproduct.prise, newproduct.url);
+    static AddNewdata(name, desc, prise, url) {
+        let newdata = new ModelData(products.length + 1, name, desc, prise, url);
         products.push(newdata);
     }
     static getproductbtID(id) {
@@ -29,24 +29,26 @@ export default class ModelData {
         return Book;
 
     }
-    static updatedata(updateobject) {
+    static updatedata(id, name, desc, prise, url) {
         const index = products.findIndex((product) => {
-            if (product._id === Number(updateobject.id)) {
+            if (product._id === Number(id)) {
                 return true;
             }
         })
-        products[index]._name = updateobject.name;
-        products[index]._desc = updateobject.desc;
-        products[index]._prise = updateobject.prise;
-        products[index]._imageUrl = updateobject.url;
-    }
-    static Delete(id){
-     const index_delet=products.findIndex((p)=>{
-        if (p._id===id) {
-            return true;
+        if (index !== -1) {
+            products[index]._name = name;
+            products[index]._desc = desc;
+            products[index]._prise = prise;
+            products[index]._imageUrl = url;
         }
-     })
-     products.splice(index_delet,1);
+    }
+    static Delete(id) {
+        const index_delet = products.findIndex((p) => {
+            if (p._id === id) {
+                return true;
+            }
+        })
+        products.splice(index_delet, 1);
     }
 }
 const product1 = new ModelData(

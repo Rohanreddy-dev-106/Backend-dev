@@ -1,5 +1,9 @@
+/* The class `productController` contains middleware functions for serving product pages, login page,
+adding new product data, updating product data, and deleting product data. */
+
 import path from "path"
 import Model from "../model/product.model.js"
+import { name } from "ejs";
 class productController {
   // Middleware to serve products page
 
@@ -20,7 +24,9 @@ class productController {
   // Middleware to  add new book
   Addnewdata(req, res, next) {
     // console.log(req.body);
-    Model.AddNewdata(req.body)
+    const { name, desc, prise } = req.body;
+    const fileurl = "images/" + req.file.filename;
+    Model.AddNewdata(name, desc, prise, fileurl)
     let products = Model.getdata();
     res.render("products", { data: products });
 
@@ -32,7 +38,7 @@ class productController {
     // console.log(typeof id);
 
     let prduct_id = Model.getproductbtID(Number(id));
-    if (Object.keys(prduct_id).length >0) {
+    if (Object.keys(prduct_id).length > 0) {
       res.render("update", { data: prduct_id, errors: null });
     }
     else {
@@ -55,7 +61,9 @@ class productController {
   //Middleware to  update data
 
   updatedata_D(req, res, next) {
-    Model.updatedata(req.body)
+    const { id, name, desc, prise } = req.body;
+    const fileurl = "images/" + req.file.filename;
+    Model.updatedata(id, name, desc, prise, fileurl);
     let products = Model.getdata();
     res.render("products", { data: products });
   }
