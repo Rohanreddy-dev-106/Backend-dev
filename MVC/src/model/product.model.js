@@ -50,6 +50,16 @@ export default class ModelData {
         })
         products.splice(index_delet, 1);
     }
+    static search(name) {
+        const data = products.filter((value) => {
+            if (value._name && value._name.toLowerCase().includes(name.toLowerCase())) {
+                return true;
+            }
+        });
+        return data
+    }
+
+
 }
 const product1 = new ModelData(
     1,

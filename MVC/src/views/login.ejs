@@ -1,27 +1,32 @@
-<div class="card shadow-sm p-4" style="width: 350px;">
-    <h2 class="card-title text-center mb-4">Login</h2>
+<div class="card shadow-sm p-3" style="width: 400px; margin:auto; margin-top:0px;">
+  <h3 class="card-title text-center mb-3">User Register</h3>
 
-    <form action="/login" method="POST">
-      <!-- Email / Username -->
-      <div class="mb-3">
-        <label for="username" class="form-label">Username or Email</label>
-        <input type="text" class="form-control" id="username" name="username" placeholder="Enter username or email">
-      </div>
+  <form action="/login" method="POST">
+    <!-- ID
+    <div class="mb-2">
+      <label for="id" class="form-label">User ID</label>
+      <input type="text" class="form-control form-control-sm" id="id" name="id" placeholder="Enter your ID" required>
+    </div> -->
 
-      <!-- Password -->
-      <div class="mb-3">
-        <label for="password" class="form-label">Password</label>
-        <input type="password" class="form-control" id="password" name="password" placeholder="Enter password">
-      </div>
-
-      <!-- Submit Button -->
-      <button type="submit" class="btn btn-primary w-100">Login</button>
-    </form>
-
-    <!-- Optional Links -->
-    <div class="text-center mt-3">
-      <a href="/register" class="text-decoration-none">Create an account</a> | 
-      <a href="/forgot-password" class="text-decoration-none">Forgot password?</a>
+    <!-- Name -->
+    <div class="mb-2">
+      <label for="name" class="form-label">Full Name</label>
+      <input type="text" class="form-control form-control-sm" id="name" name="name" placeholder="Enter full name" required>
     </div>
-  </div>
+
+    <!-- Email -->
+    <div class="mb-2">
+      <label for="email" class="form-label">Email Address</label>
+      <input type="email" class="form-control form-control-sm" id="email" name="email" placeholder="Enter email" required>
+    </div>
+
+    <!-- Password -->
+    <div class="mb-2">
+      <label for="password" class="form-label">Password</label>
+      <input type="password" class="form-control form-control-sm" id="password" name="password" placeholder="Enter password" required>
+    </div>
+
+    <!-- Submit Button -->
+    <button type="submit" class="btn btn-warning w-100 fw-bold btn-sm">Register</button>
+  </form>
 

@@ -1,4 +1,17 @@
 <div class="table-responsive shadow rounded-3">
+
+  <div class="container my-3">
+  <form action="/search" method="POST" class="d-flex justify-content-center mb-3">
+    <input
+      type="text"
+      name="search"
+      class="form-control w-50 me-2"
+      placeholder="Search products by name..."
+      required
+    />
+    <button type="submit" class="btn btn-outline-success">Search</button>
+  </form>
+</div>
   <table class="table table-bordered table-striped table-hover align-middle mb-0">
     <!-- neutral gray header -->
     <thead class="table-secondary text-dark text-center">
