@@ -80,6 +80,11 @@ console.log(array);
 //concat two arrays
 
 let arr2 = [10, 20, 30];
+
+for (const element of arr2) {
+    console.log(element);
+    
+}
 let newarr = array.concat(arr2);
 console.log(newarr);
 
@@ -148,7 +153,7 @@ const obj = {
 //loop in objects
 
 for (const key in obj) {
-    console.log(obj[key]);
+    console.log(key);
 
 }
 
