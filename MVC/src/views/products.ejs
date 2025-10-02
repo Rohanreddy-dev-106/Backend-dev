@@ -1,5 +1,14 @@
-<div class="table-responsive shadow rounded-3">
+<% if (locals.data_last) { %>
+  <div class="alert alert-primary d-flex align-items-center justify-content-between shadow-sm rounded-3" role="alert">
+    <div>
+      <span class="fw-bold me-2">🕒 Last Visit:</span>
+      <span class="text-dark small fst-italic"><%= locals.data_last %></span>
+    </div>
+  </div>
+<% } %>
 
+
+<div class="table-responsive shadow rounded-3">
   <div class="container my-3">
   <form action="/search" method="POST" class="d-flex justify-content-center mb-3">
     <input
