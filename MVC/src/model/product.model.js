@@ -71,7 +71,7 @@ const product1 = new ModelData(
 
 
 const product2 = new ModelData(
-    3,
+    2,
     "Sword Art Online: Light Novel Vol. 1",
     "Kirito enters the world of Sword Art Online in this thrilling light novel.",
     599,
@@ -79,7 +79,7 @@ const product2 = new ModelData(
 );
 
 const product3 = new ModelData(
-    4,
+    3,
     "My Hero Academia Vol. 1",
     "Izuku Midoriya starts his journey at U.A. High School.",
     449,
@@ -87,7 +87,7 @@ const product3 = new ModelData(
 );
 
 const product4 = new ModelData(
-    5,
+    4,
     "Re:Zero - Starting Life in Another World Vol. 1",
     "Subaru Natsuki finds himself in a fantasy world where death has consequences.",
     549,
@@ -95,7 +95,7 @@ const product4 = new ModelData(
 );
 
 const product5 = new ModelData(
-    6,
+    5,
     "One Piece Vol. 1",
     "Follow Monkey D. Luffy and his crew on their quest for the One Piece treasure.",
     499,
