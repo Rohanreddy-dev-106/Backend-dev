@@ -51,7 +51,7 @@ class productController {
   // Middleware to update data
   updatedata_D(req, res, next) {
     const { id, name, desc, prise } = req.body;
-    const fileurl = "is/" + req.file.filename;
+    const fileurl = "images/" + req.file.filename;
     Model.updatedata(id, name, desc, prise, fileurl);
     let products = Model.getdata();
     res.render("products", { data: products, user: req.session.UserPassword });

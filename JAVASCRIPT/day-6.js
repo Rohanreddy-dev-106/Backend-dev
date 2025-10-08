@@ -72,7 +72,7 @@ console.log(array.includes(2));// returns True or false
 
 // slice and splice
 console.log(array.slice(3, 5));//returns a array from  start to end-1
-console.log(array.slice(-3));// negative takes only one argument no second
+console.log(array.slice(-3),"kk");// negative takes only one argument no second
 
 array.splice(1, 3, 10);// insett-index number of removel insertelement
 console.log(array);
