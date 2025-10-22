@@ -178,7 +178,7 @@ console.log(sum);
 const numbers = [-3, -1, 0, 2, 5];
 let newnumb=numbers.filter((element)=>{
     if (element<0) {
-        return element
+        return true;
     }
 })
 console.log(newnumb);
