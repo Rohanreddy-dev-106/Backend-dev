@@ -50,14 +50,14 @@
 //     output: process.stdout
 // });
 // //ask it
-// interface.question("Enter the First Number", (num1) => {
-//     interface.question("Enter the Second Number", (num2) => {
-//         const ans = parseInt(num1) + parseInt(num2);//closures
-//         console.log(ans);
-//         interface.close();
-//     })
+interface.question("Enter the First Number", (num1) => {
+    interface.question("Enter the Second Number", (num2) => {
+        const ans = parseInt(num1) + parseInt(num2);//closures
+        console.log(ans);
+        interface.close();
+    })
 
-// })
+})
 
 //blocking code
 
