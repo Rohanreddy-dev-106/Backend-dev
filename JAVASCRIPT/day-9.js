@@ -113,6 +113,8 @@ let bus = {
   color: "Blue"
 }
 // car.getdetails.call(bus)
+console.log(car.getdetails("thi is from car"));
+
 const ans = car.getdetails.bind(bus)
 ans("bind method")
 
