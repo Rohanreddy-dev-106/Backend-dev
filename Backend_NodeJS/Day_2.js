@@ -45,10 +45,10 @@
 // const readline = require("readline");
 //build a interface
 
-// const interface = readline.createInterface({
-//     input: process.stdin,
-//     output: process.stdout
-// });
+const interface = readline.createInterface({
+    input: process.stdin,
+    output: process.stdout
+});
 // //ask it
 interface.question("Enter the First Number", (num1) => {
     interface.question("Enter the Second Number", (num2) => {
